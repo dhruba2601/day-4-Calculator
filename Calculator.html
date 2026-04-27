@@ -1,40 +1,106 @@
 <!DOCTYPE html>
+<!--
+  =============================================
+  PROJECT: Simple Calculator
+  AUTHOR: dhruba2601
+  DATE: 2026
+  GITHUB: https://github.com/dhruba2601
+  =============================================
+  WHAT THIS FILE DOES:
+  This is the HTML file. Think of HTML like the
+  skeleton of a human body. It gives structure
+  to our calculator — the display screen,
+  the buttons, everything you SEE on the page.
+  =============================================
+-->
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <meta charset="UTF-8"> <!-- Tells browser to use standard characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it work on mobile too -->
+    <title>Calculator</title> <!-- This shows on the browser tab -->
+
+    <!-- 
+      Linking our CSS file.
+      CSS is like the clothes and skin of our skeleton.
+      It makes everything look good — colors, sizes, spacing.
+    -->
     <link rel="stylesheet" href="Calculator.css">
 </head>
+
 <body>
+
+    <!-- 
+      MAIN CALCULATOR BOX
+      This is the outer dark box that holds everything.
+      In CSS we target this using .calculator
+    -->
     <div class="calculator">
-    <div class="display">0</div>
-    <div class="buttons">
-        <button class="clear">C</button>
-        <button>+/-</button>
-        <button>%</button>
-        <button class="operator">/</button>
 
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="operator">*</button>
+        <!-- 
+          DISPLAY SCREEN
+          This is where numbers show up when you click buttons.
+          JavaScript will update this area when buttons are clicked.
+          Starts with "0" by default.
+        -->
+        <div class="display">0</div>
 
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="operator">-</button>
+        <!-- 
+          BUTTON GRID
+          All calculator buttons live inside here.
+          CSS Grid organizes them into 4 columns automatically.
+          
+          BUTTON LAYOUT:
+          [ C ] [+/-] [ % ] [ / ]
+          [ 7 ] [ 8 ] [ 9 ] [ * ]
+          [ 4 ] [ 5 ] [ 6 ] [ - ]
+          [ 1 ] [ 2 ] [ 3 ] [ + ]
+          [  0  ]     [ . ] [ = ]
+        -->
+        <div class="buttons">
 
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="operator">+</button>
+            <!-- ROW 1: Special function buttons -->
+            <button class="clear">C</button>      <!-- C = Clear. Resets display to 0 -->
+            <button>+/-</button>                  <!-- Toggles number between positive and negative -->
+            <button>%</button>                    <!-- Converts number to percentage. 50% = 0.5 -->
+            <button class="operator">/</button>   <!-- Division operator (orange color) -->
 
-        <button class="zero">0</button>
-        <button>.</button>
-        <button class="equals">=</button>
-        
-    </div>
-</div>
+            <!-- ROW 2: Numbers 7, 8, 9 -->
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>   <!-- Multiplication operator -->
+
+            <!-- ROW 3: Numbers 4, 5, 6 -->
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>   <!-- Subtraction operator -->
+
+            <!-- ROW 4: Numbers 1, 2, 3 -->
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>   <!-- Addition operator -->
+
+            <!-- ROW 5: Zero, decimal, equals -->
+            <button class="zero">0</button>       <!-- Zero spans 2 columns (wider button) -->
+            <button>.</button>                    <!-- Decimal point for numbers like 3.14 -->
+            <button class="equals">=</button>     <!-- Equals button (blue). Shows the result -->
+
+        </div><!-- end .buttons -->
+
+    </div><!-- end .calculator -->
+
+    <!-- 
+      JAVASCRIPT FILE LINK
+      IMPORTANT: This must be at the BOTTOM of the page.
+      Why? Because HTML loads top to bottom.
+      If JS loads before buttons exist, it finds nothing to click.
+      Always put script tag at the bottom of body.
+    -->
+    <script src="Calculator.js"></script>
+
 </body>
 </html>
