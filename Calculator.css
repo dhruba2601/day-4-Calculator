@@ -1,49 +1,120 @@
+/*
+  =============================================
+  PROJECT: Simple Calculator - Styles
+  AUTHOR: dhruba2601
+  =============================================
+  WHAT THIS FILE DOES:
+  CSS is like the clothing and appearance of our
+  calculator. It controls colors, sizes, spacing,
+  fonts, and layout. Without CSS, everything would
+  just be plain black text on a white background.
+
+  HOW CSS WORKS:
+  .className { property: value; }
+  The dot (.) means we are targeting a class.
+  Classes are added in HTML like: class="calculator"
+  =============================================
+*/
+
+
+/* =============================================
+   CALCULATOR OUTER BOX
+   The dark rounded box that wraps everything.
+   ============================================= */
 .calculator {
-    width: 320px;
-    margin: 100px auto;
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
+    width: 320px;           /* Fixed width — calculator is always 320px wide */
+    margin: 100px auto;     /* auto = center horizontally on page. 100px = push down from top */
+    background: #222;       /* Dark grey background color */
+    border-radius: 10px;    /* Rounded corners */
+    padding: 20px;          /* Space inside the box so buttons don't touch the edges */
 }
 
+
+/* =============================================
+   DISPLAY SCREEN
+   The black area at top where numbers appear.
+   JavaScript updates the text inside this area.
+   ============================================= */
 .display {
-    background: #111;
-    color: white;
-    text-align: right;
-    padding: 15px;
-    font-size: 32px;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    background: #111;       /* Darker black than the outer box */
+    color: white;           /* White text so numbers are visible */
+    text-align: right;      /* Numbers align to right side (like a real calculator) */
+    padding: 15px;          /* Space inside the display area */
+    font-size: 32px;        /* Large text so numbers are easy to read */
+    border-radius: 5px;     /* Slightly rounded corners */
+    margin-bottom: 15px;    /* Space between display and buttons below */
 }
 
+
+/* =============================================
+   BUTTON GRID LAYOUT
+   CSS Grid automatically arranges buttons
+   into 4 equal columns.
+
+   repeat(4, 1fr) means:
+   - 4 columns
+   - each column takes equal space (1 fraction)
+   ============================================= */
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    display: grid;                          /* Activates CSS Grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px;                             /* Space between each button */
 }
 
+
+/* =============================================
+   ALL BUTTONS - Default Style
+   This style applies to EVERY button.
+   Specific classes below override these defaults.
+   ============================================= */
 button {
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background: #444;
-    color: white;
-    cursor: pointer;
+    padding: 20px;          /* Space inside button (makes buttons bigger) */
+    font-size: 18px;        /* Text size on button */
+    border: none;           /* Remove default browser border */
+    border-radius: 5px;     /* Slightly rounded corners */
+    background: #444;       /* Medium grey — default button color */
+    color: white;           /* White text */
+    cursor: pointer;        /* Shows hand cursor when hovering */
 }
 
+
+/* =============================================
+   EQUALS BUTTON (=)
+   Blue color to stand out from other buttons.
+   Targets only buttons with class="equals"
+   ============================================= */
 .equals {
-    background-color: #4285F4;
+    background-color: #4285F4; /* Google Blue */
 }
 
+
+/* =============================================
+   CLEAR BUTTON (C)
+   Red color — warns user this resets everything.
+   Targets only buttons with class="clear"
+   ============================================= */
 .clear {
-    background-color: #EA4335;
+    background-color: #EA4335; /* Google Red */
 }
 
+
+/* =============================================
+   ZERO BUTTON (0)
+   Spans across 2 columns instead of 1.
+   This makes the 0 button wider (like iPhone calculator).
+   grid-column: span 2 = take up 2 column spaces
+   ============================================= */
 .zero {
-    grid-column: span 2;
+    grid-column: span 2; /* Makes this button twice as wide */
 }
 
+
+/* =============================================
+   OPERATOR BUTTONS (+, -, *, /)
+   Orange color to visually separate math operators
+   from number buttons.
+   Targets buttons with class="operator"
+   ============================================= */
 .operator {
-    background-color: #FF9500;
+    background-color: #FF9500; /* Orange */
 }
